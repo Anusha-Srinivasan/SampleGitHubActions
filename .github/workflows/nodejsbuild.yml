@@ -28,7 +28,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         #cache: 'npm'
         #cache-dependency-path: TestAddIn/src/package-lock.json
-    - run: npm ci
-    - run: npm install
-    - run: npm run build --if-present
+    - run: npm --prefix TestAddIn/src/package.json ci
+    - run: npm --prefix TestAddIn/src/package.json install
+    - run: npm --prefix TestAddIn/src/package.json run build --if-present
    # - run: npm test
